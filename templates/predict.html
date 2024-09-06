@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
+  <!-- normalize css -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/normalize.css') }}">
+    <!-- custom css -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+   
+  </head>
+
+<body>
+
+  
+  <section id="about" class="about py">
+    <div class="about-inner">
+      <div class="container grid">
+        <div class="about-left text-center">
+         <h1 class="jumbotron bg-primary">Image Classfication</h1>
+         <br><br>
+          <br> <br> <br>
+          <div class="col-lg-12">
+            <form class="form-inline" action="/predict" method="post" enctype="multipart/form-data">
+              <input type="file" name="file"><br><br>
+              <input type="submit" class="btn btn-success" value="Predict">
+            </form>
+          </div>
+
+          <h2>Class: <mark>{{cancer}}</mark></h2>
+          <br>
+          <br>
+             <img src="{{ user_image }}" alt="User Image" 
+               style="width:450px;height:450px">
+               
+          <br>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
